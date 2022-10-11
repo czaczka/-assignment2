@@ -25,7 +25,7 @@ MongoClient.connect(url, {useNewUrlParser:true}, function(err,client) {
     require('./getList')(db,app);
     // require('./delete')(db,app,ObjectID);
     // require('./prodcount')(db,app);
-    // require('./validid')(db,app);
+    require('./validid')(db,app);
     // require('./update.js')(db,app,ObjectID);
     // require('./getItem')(db,app);
 

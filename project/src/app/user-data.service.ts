@@ -24,8 +24,8 @@ export class UserDataService {
   deleteitem(productID: any) {
     return this.http.post<any>('http://localhost:3000/api/deleteitem', {'productid':productID} );
   }
-  checkvalidid(productID: any){
-    return this.http.post<any>('http://localhost:3000/api/checkvalidid', {'id':productID} );
+  checkvalidid(userID: any){
+    return this.http.post<any>('http://localhost:3000/api/checkvalidid', {'id':userID} );
   }
   getproductcount(){
     return this.http.get<any>('http://localhost:3000/api/prodcount');
