@@ -21,7 +21,7 @@ const dbName = 'mydb2';
 MongoClient.connect(url, {useNewUrlParser:true}, function(err,client) {
     console.log("connect to server");
     const db = client.db(dbName);
-    // require('./add.js')(db,app);
+    require('./add.js')(db,app);
     // require('./getList')(db,app);
     // require('./delete')(db,app,ObjectID);
     // require('./prodcount')(db,app);
