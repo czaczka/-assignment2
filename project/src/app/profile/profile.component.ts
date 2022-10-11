@@ -17,5 +17,12 @@ export class ProfileComponent implements OnInit {
       this.users = data;
     })
   }
+  deleteproduct(id: any) {
+    if (confirm("are you sure you want to delete this item")){
+      this.userdata.deleteitem(id).subscribe((data)=>{
+        this.users = data;
+      })
+    }
+  }
 
 }
