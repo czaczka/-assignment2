@@ -1,1 +1,18 @@
-<p>profile works!</p>
+<div class="container">
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>email</th>
+            <th>role</th>
+        </tr>
+        <tr style="padding-top: 20px;" *ngFor="let user of users">
+            <td>{{user.userID}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.role}}</td>
+            
+
+        </tr>
+    </table>
+</div>
