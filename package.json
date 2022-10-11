@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/czaczka/-assignment2#readme",
   "dependencies": {
-    "bootstrap": "^5.2.2"
+    "bootstrap": "^5.2.2",
+    "mongodb": "^4.10.0"
   }
 }
