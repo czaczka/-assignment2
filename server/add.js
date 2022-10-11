@@ -4,7 +4,7 @@ module.exports = function(db,app) {
             return res.sendStatus(400)
         }
         user = req.body;
-        console.log(user);
+        console.log("req body"+user);
         const collection = db.collection('users');
 
         await collection.find({'userID':user.userID}).toArray(function(err,docs){console.log(docs)})
