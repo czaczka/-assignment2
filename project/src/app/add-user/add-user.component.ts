@@ -40,11 +40,13 @@ export class AddUserComponent implements OnInit {
   useremail:string = "";
   userole:number= 0;
   userid:number=0 ;
+  userpassword:string= "";
   newuser:Users =  {
     userID: 0,
     name: "",
     email: "",
-    role: 0,}
+    role: 0,
+    password: ""}
 
     newProductMessage = "";
     iderrormsg:string = "this id is already in use";
@@ -73,6 +75,7 @@ export class AddUserComponent implements OnInit {
       this.newuser.email= this.useremail;
       this.newuser.name = this.username;
       this.newuser.role = this.userole;
+      this.newuser.password = this.userpassword;
 
        
       this.userdata.add(this.newuser).subscribe((data)=>{
@@ -90,6 +93,7 @@ export class AddUserComponent implements OnInit {
         this.username= "";
         this.useremail="";
         this.userole=0;
+        this.userpassword="";
       });
     }
   }
