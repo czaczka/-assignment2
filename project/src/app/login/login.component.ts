@@ -20,7 +20,7 @@ export class LoginComponent implements OnInit {
     userID: 0,
     name: "",
     email: "",
-    role: 0,
+    role: "",
     password: ""}
   constructor(private userdata:UserDataService,private router:Router) { }
 

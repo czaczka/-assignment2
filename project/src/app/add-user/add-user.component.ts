@@ -38,14 +38,14 @@ import { trigger,state,style,animate,transition } from '@angular/animations';
 export class AddUserComponent implements OnInit {
   username:string = "";
   useremail:string = "";
-  userole:number= 0;
+  userole:string= "";
   userid:number=0 ;
   userpassword:string= "";
   newuser:Users =  {
     userID: 0,
     name: "",
     email: "",
-    role: 0,
+    role: "",
     password: ""}
 
     newProductMessage = "";
@@ -92,7 +92,7 @@ export class AddUserComponent implements OnInit {
         this.userid = 0;
         this.username= "";
         this.useremail="";
-        this.userole=0;
+        this.userole="";
         this.userpassword="";
       });
     }

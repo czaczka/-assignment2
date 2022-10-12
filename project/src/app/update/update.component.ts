@@ -9,8 +9,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
+  // users: Users = {
+  //   userID: 0,
+  //   name: "",
+  //   email: "",
+  //   role: "",
+  //   password: ""
+  //   };
   users: Users[] = [];
-
   user = (localStorage.getItem('userID'));
 
   constructor(private userdata:UserDataService,private router:Router) { }
@@ -20,6 +26,7 @@ export class UpdateComponent implements OnInit {
     this.userdata.getitem(this.user).subscribe((data)=>{
       console.log(data);
       this.users = data;
+    
     })
   }
   update(user:any) {
