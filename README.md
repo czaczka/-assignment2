@@ -14,11 +14,11 @@ The git repository contains the main angular app along with the backend node ser
 
 ## Data structures
 
-Currently there is one main data structures.  This is the users database using mongodb. It contains a userID, name, email, password and role. 
+Currently there is one main data structures.  This is the users database using mongodb. It contains a userID, name, email, password and role. The other main data structure is the users interface which is for the frontend. It contains the outline of the object users which has a userID, name, email, password and role.
 
 ## REST API
 
-### add route
+### add 
 
 - Route: api/add
 - Method: POST
@@ -94,15 +94,23 @@ This is the default route and contains the nav-bar links for the other component
 
 #### Login
 
-This component is accessed from the home page using the login button which navigates the user to the login screen where they are greeted with a username and password field. The user must enter the correct details and press submit. Once pressed a function 'submit()' is called which activates the route /login via http methods and verifies the users credentials if they are correct they will be redirected to the profile component if they are incorrect they will receive an alert instructing them that their username or password is incorrect.
+This component is accessed from the home page using the login button which navigates the user to the login screen where they are greeted with a username and password field. The user must enter the correct details and press submit. Once pressed a function 'login()' is called which activates the route api/validuser via http methods and verifies the users credentials if they are correct they will be redirected to the profile component if they are incorrect they will receive an alert instructing them that their username or password is incorrect.
 
 #### Profile
 
-This component can be accessed from the homepage or after the user is redirected from the login screen. If the user attempts to access the profile component without loggin in they will be given an alert message to login and then will be redirected to the login page. If the user is indeed logged in then they will see their user details such as their id, username, email and role. This data is accessed through the /loginAfter route which retrieves the users data by matching the username to an array of data in the extendedUsers.json file. The user can update their details and once the submit button is pressed the 'editfunc()' will be called which also uses the /loginAfter route to update the data in the extendedUsers.json file. There was plans to allow only certain data to be visible to users with a certain role by hiding DOM elements using ngif statements however this feature could not be successfully implemented.
+This component can be accessed from the homepage or after the user is redirected from the login screen. If the user attempts to access the profile component without login in they will be given an alert message to login and then will be redirected to the login page. If the user is indeed logged in then they will see their user details such as their id, username, email and role. This data is accessed through the api/validuser route which retrieves the users data by matching the email to the database. The user is saved in session storage.
 
 #### Chat
 
-This is currently an empty component and is reserved for phase two of the assignment
+Chat can be accessed via the main navbar. On successful navigation the socket connection is initiated. The `initToConnection()` retrieves any messages that have been sent. When the user sends a message the `chat()` function is called which communicates with the chat service.
+
+#### add-users
+
+Add users can be accessed via the main navbar. It is the main component for creating users. It has a form which has input for a userid, name, email, password and role. In the main class there is an outline of the user object. When the user presses add user the `addnewUser()` function is called it checks if there is a user id, the function `checkvalidid()` using the api/checkvalidid route, is also called to check if the userid has already been taken. If it has not then the data is passed to the /api/add route which takes the user data and pushes it into the database.
+
+#### all-users
+
+All users can be accessed via the main navbar. `ngOnInit()` is called when the pages loads and calls the /api/getlist route which retrieves and array of all user details from the datbase and displays it onto the page. The page also features a delete button and edit button. If the user clicks the delete button on the given user the `deleteproduct()` function is called which takes the userid and passes it to the /api/delete route which takes that userid and finds it in the database and deletes it. If the user presses the edit button the `update()` function is called and takes the userid and passes it to the /api/update route and redirects the user to the update component.
 
 ## Other features
 
