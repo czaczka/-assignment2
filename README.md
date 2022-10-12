@@ -135,6 +135,18 @@ This service contains the functions for the CRUD database application. It contai
 - `checkvalidid()` used for checking if the id already exists in the database and uses the /api/checkvalidid route
 - `checkuser()` used for checking the login credentials of the user for verification. Uses the /api/checkuser route
 
+### Models
+
+#### users
+
+This is the model that represents the users database it contains the following:
+`userID: number;
+    name: string;
+    email: string;
+    role: string;
+    password: string;`
+It is used in tandem with the user-data service when using the routes to move the data around.
+
 ## Other features
 
 ### Logout
