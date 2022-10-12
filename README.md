@@ -112,6 +112,29 @@ Add users can be accessed via the main navbar. It is the main component for crea
 
 All users can be accessed via the main navbar. `ngOnInit()` is called when the pages loads and calls the /api/getlist route which retrieves and array of all user details from the datbase and displays it onto the page. The page also features a delete button and edit button. If the user clicks the delete button on the given user the `deleteproduct()` function is called which takes the userid and passes it to the /api/delete route which takes that userid and finds it in the database and deletes it. If the user presses the edit button the `update()` function is called and takes the userid and passes it to the /api/update route and redirects the user to the update component.
 
+#### update
+
+Update is accessed from the all-user menu. `ngOnIniti()` is called and the route /api/getitem is called and takes the userid from all-users, it then finds the user in the database and brings back an array of the full user details. It then populates this into a form where a user can edit the users details. the user can then submit this and the `update()` function is called which takes the full user parameters. The /api/updateitem route is called and finds the user in the database, it then changes all the users details to the database and then redirects the user to the homepage.
+
+### services
+
+#### socket service
+
+This service contains the functions to make the sockets chat application work. It contains the following functions:
+- `send()` which sends the user messages
+- `getMessage()` which retrieves messages sent form other users
+
+#### user-data service
+
+This service contains the functions for the CRUD database application. It contains the following functions:
+- `add()` used for adding users and uses the /api/add route
+- `getlist()` used for getting all users and uses the /api/getlist route
+- `getitem()` used for getting an individual user and uses the /api/getitem route
+- `updateitem()` used for editing a user and uses the /api/update route
+- `deleteitem()` used for deleting an individual user and uses the /api/deleteitem route
+- `checkvalidid()` used for checking if the id already exists in the database and uses the /api/checkvalidid route
+- `checkuser()` used for checking the login credentials of the user for verification. Uses the /api/checkuser route
+
 ## Other features
 
 ### Logout
