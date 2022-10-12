@@ -1,3 +1,4 @@
+//function for deleting user. User id is taken from form and then user is located in databse using the userid and then deleted.
 module.exports = function(db,app,ObjectID){
     app.post('/api/deleteitem', async function(req,res){
         if (!req.body) {

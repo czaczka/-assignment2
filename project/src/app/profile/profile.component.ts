@@ -15,6 +15,8 @@ export class ProfileComponent implements OnInit {
   email = "";
   role = "";
 
+
+  //checks if user is logged in. If not they are redirected to login page otherwise if they are then their details are retrieved from session storage and displayed on their profile page
   constructor(private router: Router, private httpClient: HttpClient) { 
   if (!(sessionStorage.getItem('loginStatus')=="true")){
     alert("login please");

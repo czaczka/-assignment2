@@ -1,7 +1,6 @@
+//function for getting an individual user using their id and then sending back full array of user details
 module.exports = function(db,app) {
-    console.log("working1");
     app.post('/api/getitem', async function(req,res){
-        console.log("working2");
         console.log(req.body);
         const collection = db.collection('users');
         await collection.find({userID:Number(req.body.userID)}).toArray((err,data)=>{

@@ -1,3 +1,4 @@
+//function for starting sockets connection
 module.exports = {
 
     connect: function(io, PORT){

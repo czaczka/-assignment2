@@ -13,10 +13,11 @@ export class ChatComponent implements OnInit {
   messages:string[]=[];
   ioConnection:any;
   constructor(private socketService:SocketService) { }
-
+//initialises the sockets connection
   ngOnInit(): void {
     this.initIoConnection();
   }
+  //gets messages that are sent
   private initIoConnection(){
     // this.socketService.initSocket();
     this.ioConnection = this.socketService.getMessage()
@@ -24,6 +25,7 @@ export class ChatComponent implements OnInit {
         this.messages.push(message);
       });
   }
+  //sends chat messages
   chat(){
     if(this.messagecontent){
       this.socketService.send(this.messagecontent);

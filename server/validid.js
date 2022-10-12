@@ -1,3 +1,4 @@
+//function for checking if user id is unique. searches the count of the given id to see if it is 0
 module.exports = function(db,app){
     app.post('/api/checkvalidid',function(req,res) {
         if (!req.body) {

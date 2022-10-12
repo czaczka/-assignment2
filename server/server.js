@@ -9,6 +9,8 @@ const http = require('http').Server(app);
 const server = require('./listen.js');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
+//required for sockets and prevent cross origin error
 const io = require('socket.io')(http,{
     cors: {
         origin: "http://localhost:4200",
@@ -24,10 +26,11 @@ app.use(bodyParser.json());
 app.use(cors());
 
 const url = 'mongodb://localhost:27017';
-const dbName = 'mydb2';
-// const client = new MongoClient(url);
-// const colName = 'products'
 
+//name of database
+const dbName = 'mydb2';
+
+//routes for CRUD methods
 MongoClient.connect(url, {useNewUrlParser:true}, function(err,client) {
     console.log("connect to server");
     const db = client.db(dbName);
@@ -42,4 +45,5 @@ MongoClient.connect(url, {useNewUrlParser:true}, function(err,client) {
     server.listen(http,PORT);
     
 });
+//initiates sockets connection
 sockets.connect(io, PORT);

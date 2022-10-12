@@ -14,6 +14,7 @@ export class AppComponent {
 
 ngOnInit(): void {
 }
+//logs out the current user
 clear() {
   sessionStorage.clear();
   this.router.navigateByUrl("/login");

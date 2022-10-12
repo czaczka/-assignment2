@@ -26,6 +26,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  //function for verifying login. if user password and email are correct the user gets redirected to their profile page if not they are prompeted to relogin
   login(useremail:any,userpassword:any){
 
     this.userdata.checkuser(useremail,userpassword).subscribe((data)=>{

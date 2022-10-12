@@ -1,3 +1,5 @@
+//function for checking if user email and password match in the database, if they do then the entire user is sent back otherwise and error is sent back prompting the user to verify their login
+
 module.exports = function(db,app) {
     app.post('/api/checkuser',async function(req,res){
         if (!req.body) {

@@ -9,18 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./update.component.css']
 })
 export class UpdateComponent implements OnInit {
-  // users: Users = {
-  //   userID: 0,
-  //   name: "",
-  //   email: "",
-  //   role: "",
-  //   password: ""
-  //   };
+
   users: Users[] = [];
   user = (localStorage.getItem('userID'));
 
   constructor(private userdata:UserDataService,private router:Router) { }
 
+  //retrieves the user details that are to be updated
   ngOnInit(): void {
     console.log(this.user);
     this.userdata.getitem(this.user).subscribe((data)=>{
@@ -29,6 +24,7 @@ export class UpdateComponent implements OnInit {
     
     })
   }
+  //posts the user data to the server route and updates the db
   update(user:any) {
     console.log(user);
   

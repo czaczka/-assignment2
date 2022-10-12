@@ -1,3 +1,5 @@
+
+//function for adding new user. async function required. reqbody from form is added to database then sent as an array back to adduser component. checks if item is duplicate
 module.exports = function(db,app) {
     app.post('/api/add', async function(req,res){
         if (!req.body) {

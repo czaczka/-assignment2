@@ -65,6 +65,7 @@ export class AddUserComponent implements OnInit {
   get noticeName(){
     return this.noticeshow ? 'show':'hide';
   }
+  //adds new user via userdata service
   addnewUser(event:any){
     event.preventDefault();
     if(this.userid == null){
@@ -97,6 +98,7 @@ export class AddUserComponent implements OnInit {
       });
     }
   }
+  //checks if user id has already been taken
   checkvalidid(event: any){
     this.noticeshow = false
     this.userdata.checkvalidid(event).subscribe((data)=>{

@@ -1,3 +1,4 @@
+//function for updating user data. userid is taken and fields are posted to the database based on the user id
 module.exports = function(db,app,ObjectID) {
     var result;
     app.post('/api/update',function(req,res){
