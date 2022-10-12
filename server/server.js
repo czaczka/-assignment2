@@ -3,11 +3,18 @@ var ObjectID = require('mongodb').ObjectId;
 const PORT = 3000;
 const express = require('express');
 const app = express();
+const sockets = require('./socket.js');
 
 const http = require('http').Server(app);
 const server = require('./listen.js');
 const cors = require('cors');
 const bodyParser = require('body-parser');
+const io = require('socket.io')(http,{
+    cors: {
+        origin: "http://localhost:4200",
+        methods: ["GET", "POST"],
+    }
+});
 
 
 
@@ -35,3 +42,4 @@ MongoClient.connect(url, {useNewUrlParser:true}, function(err,client) {
     server.listen(http,PORT);
     
 });
+sockets.connect(io, PORT);
