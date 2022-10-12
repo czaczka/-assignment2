@@ -11,6 +11,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { AddUserComponent } from './add-user/add-user.component';
 import { AllUsersComponent } from './all-users/all-users.component';
 import { UpdateComponent } from './update/update.component';
+import { ChatComponent } from './chat/chat.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { UpdateComponent } from './update/update.component';
     ProfileComponent,
     AddUserComponent,
     AllUsersComponent,
-    UpdateComponent
+    UpdateComponent,
+    ChatComponent
   ],
   imports: [
     BrowserModule,
