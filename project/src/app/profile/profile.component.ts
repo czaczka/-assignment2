@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
 import { Users } from '../users';
+import {Router} from '@angular/router';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile',
@@ -8,21 +10,25 @@ import { Users } from '../users';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  users: Users[] = [];
+  id = 0;
+  name = "";
+  email = "";
+  role = "";
 
-  constructor(private userdata:UserDataService) { }
+  constructor(private router: Router, private httpClient: HttpClient) { 
+  if (!(sessionStorage.getItem('loginStatus')=="true")){
+    alert("login please");
+    this.router.navigateByUrl("/login");
+  }
+  this.id = Number(sessionStorage.getItem('userID'));
+  this.name = sessionStorage.getItem('name')!;
+  this.email = sessionStorage.getItem('email')!;
+  this.role = sessionStorage.getItem('role')!;
 
+  }
   ngOnInit(): void {
-    this.userdata.getlist().subscribe((data)=>{
-      this.users = data;
-    })
+   
   }
-  deleteproduct(id: any) {
-    if (confirm("are you sure you want to delete this item")){
-      this.userdata.deleteitem(id).subscribe((data)=>{
-        this.users = data;
-      })
-    }
-  }
+  
 
 }
