@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserDataService } from '../user-data.service';
 import { Users } from '../users';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class LoginComponent implements OnInit {
     email: "",
     role: 0,
     password: ""}
-  constructor(private userdata:UserDataService) { }
+  constructor(private userdata:UserDataService,private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -32,6 +33,13 @@ export class LoginComponent implements OnInit {
       if (data) {
         console.log(data);
         console.log("user verified");
+        sessionStorage.clear();
+        sessionStorage.setItem('userID', data[0].userID);
+        sessionStorage.setItem('name', data[0].name);
+        sessionStorage.setItem('email', data[0].email);
+        sessionStorage.setItem('role', data[0].role);
+        this.router.navigateByUrl("/profile");
+
       } else{
         console.log(data);
         alert("incorrect user email or password");
