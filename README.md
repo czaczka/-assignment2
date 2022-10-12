@@ -10,7 +10,7 @@ Make sure to clone the repository. Once cloned run `npm install` in the root dir
 
 ## git layout
 
-The git repository contains the main angular app along with the backend node server directory. Code is committed reguarly when a new feature is implemented and working correctly. Changes would be pushed after every hour to maintain the integrity of the code.
+The git repository contains the main angular app along with the backend node server directory. Code is committed reguarly when a new feature is implemented and working correctly. Such as when a new component or route is created. IF work is being paused to take a break then changes are also committed with a message that displays what progress is being made. Currently everything has been merged to the main branch as the project has been completed but seperate branches would be used if a change affecting previous allready working code was being changed to implement a new feature. Changes would be pushed after every hour to maintain the integrity of the code.
 
 ## Data structures
 
