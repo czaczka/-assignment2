@@ -30,7 +30,7 @@ MongoClient.connect(url, {useNewUrlParser:true}, function(err,client) {
     // require('./prodcount')(db,app);
     require('./validid')(db,app);
     require('./validUser')(db,app);
-    // require('./update.js')(db,app,ObjectID);
+    require('./update.js')(db,app,ObjectID);
     // require('./getItem')(db,app);
 
     server.listen(http,PORT);
