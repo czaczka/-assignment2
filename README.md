@@ -49,6 +49,41 @@ Currently there is one main data structures.  This is the users database using m
 - Return value: userID, name, password, role
 - Technical explanation: This route gets all of the users in the database and their parameters and then appends it to an array and sends it back to the component.
 
+### listen
+- Route: ./listen
+- Method: GET
+- Parameters: app, Port
+- Return: starts server
+- Technical explanation: Starts the server on port 3000
+
+### socket
+- Route: ./socket
+- Method: GET
+- Parameters: io, port
+- Return: Socket connection
+- Technical explanantion: Starts the socket connection when called on port 3000 and broadcasts the socket id.
+
+### update
+- Route: /api/update
+- Method: POST
+- Paramaters: userID
+- Return: userID, name, email, password, role
+- Technical explanation: Takes in a userID to be edited and pushes the changes to the database and returns the changes
+
+### validid
+- Route: /api/checkvalidid
+- Method: POST
+- Parameters: userID
+- Return: userID
+- Technical explanation: Checks if the userid has been used before and returns the userID
+
+### validuser
+- Route: /api/checkuser
+- Method: POST
+- Parameters: email,password
+- Return: error or userid, name, email, role
+- Technical explanation: Takes the user email and password then checks the database to see if both match and if it does it will return an array of the user otherwise it will return an error.
+
 ## Angular architecture
 
 ### Components
