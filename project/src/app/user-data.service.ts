@@ -14,9 +14,9 @@ export class UserDataService {
   getlist(){
     return this.http.get<any>('http://localhost:3000/api/getlist');
   }
-  // getuser(productID: any){
-  //   return this.http.post<any>('http://localhost:3000/api/getitem', {'userid':userID} );
-  // }
+  getitem(userID: any){
+    return this.http.post<any>('http://localhost:3000/api/getitem', {'userID':userID} );
+  }
   updateitem(user: Users){
     return this.http.post<any>('http://localhost:3000/api/update', user );
 
