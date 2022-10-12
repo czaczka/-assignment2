@@ -14,7 +14,7 @@ The git repository contains the main angular app along with the backend node ser
 
 ## Data structures
 
-Currently there is one main data structures.  This is the users database using mongodb. It contains a userID, name, email, password and role. It uses the mongodb and is currently set to "db2" the mongodb is initiated on startup and the server address is `mongodb://localhost:27017` The other main data structure is the users interface which is for the frontend. It contains the outline of the object users which has a userID, name, email, password and role.
+Currently there is one main data structures.  This is the users database using mongodb where users is the collection name. It contains a userID, name, email, password and role. It uses the mongodb and is currently set to "db2" the mongodb is initiated on startup and the server address is `mongodb://localhost:27017` The other main data structure is the users interface which is for the frontend. It contains the outline of the object users which has a userID, name, email, password and role.
 
 ## REST API
 
