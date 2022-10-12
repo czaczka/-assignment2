@@ -30,4 +30,7 @@ export class UserDataService {
   getproductcount(){
     return this.http.get<any>('http://localhost:3000/api/prodcount');
   }
+  checkuser(useremail: any, userpassword: any){
+    return this.http.post<any>('http://localhost:3000/api/checkuser', {useremail,userpassword});
+  }
 }
